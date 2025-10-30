@@ -42,6 +42,7 @@ class ChatStatistics:
         output_dir: Union[str, Path], 
         width: int = 800, height: int = 600,
         max_font_size: int = 250,
+        background_color: str = 'white',
     ):
         """Generates a word cloud from the chat data
         : param output_dir: path to output directory for word cloud image
@@ -62,7 +63,7 @@ class ChatStatistics:
         wordcloud = WordCloud(
             width=1200, height=1200,
             font_path=str(DATA_DIR / 'NotoNaskhArabic.ttf'),
-            background_color='white',
+            background_color=background_color,
             max_font_size=250,
         ).generate(text_content)
 
